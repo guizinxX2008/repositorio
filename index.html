@@ -1,0 +1,238 @@
+<<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesouro Perdido na Amazônia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .step {
+            background-color: #ffffff;
+            border: 2px solid #00796b;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            display: inline-block;
+            width: 300px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+        .step h2 {
+            color: #00796b;
+        }
+        .step button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #00796b;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .step button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jornada ao Tesouro Perdido na Amazônia</h1>
+
+    <div id="step1" class="step">
+        <h2>Passo 1: Início da Jornada</h2>
+        <p>Você está em Manaus, a porta de entrada para a Amazônia. Você encontrou um antigo mapa com uma pista.</p>
+        <button onclick="nextStep('step2')">Explorar o Mapa</button>
+    </div>
+
+    <div id="step2" class="step" style="display:none;">
+        <h2>Passo 2: Escolha da Rota</h2>
+        <p>O mapa indica dois caminhos: um através da selva densa e outro pelo rio.</p>
+        <button onclick="nextStep('step3a')">Ir pela Selva</button>
+        <button onclick="nextStep('step3b')">Ir pelo Rio</button>
+    </div>
+
+    <div id="step3a" class="step" style="display:none;">
+        <h2>Passo 3: Desafios da Selva</h2>
+        <p>Você entrou na selva e encontrou um grupo de indígenas amigáveis. Eles oferecem duas opções: uma trilha segura ou um caminho mais curto mas perigoso.</p>
+        <button onclick="nextStep('step4a')">Seguir a Trilha Segura</button>
+        <button onclick="nextStep('step4b')">Tomar o Caminho Perigoso</button>
+    </div>
+
+    <div id="step3b" class="step" style="display:none;">
+        <h2>Passo 3: Navegação no Rio</h2>
+        <p>Você optou pelo rio e encontrou um barco. Durante a navegação, você se depara com duas opções: um atalho através de um afluente ou seguir o curso principal.</p>
+        <button onclick="nextStep('step4c')">Tomar o Afluente</button>
+        <button onclick="nextStep('step4d')">Seguir o Curso Principal</button>
+    </div>
+
+    <div id="step4a" class="step" style="display:none;">
+        <h2>Passo 4: Trilha Segura</h2>
+        <p>A trilha segura leva você a uma clareira onde você encontra um antigo templo. O templo tem dois caminhos: um para dentro e outro para um esconderijo.</p>
+        <button onclick="nextStep('step5a')">Entrar no Templo</button>
+        <button onclick="nextStep('step5b')">Explorar o Esconderijo</button>
+    </div>
+
+    <div id="step4b" class="step" style="display:none;">
+        <h2>Passo 4: Caminho Perigoso</h2>
+        <p>O caminho perigoso leva você a uma área com animais selvagens. Você encontra uma ponte quebrada com duas opções: consertar a ponte ou procurar uma rota alternativa.</p>
+        <button onclick="nextStep('step5c')">Consertar a Ponte</button>
+        <button onclick="nextStep('step5d')">Procurar Rota Alternativa</button>
+    </div>
+
+    <div id="step4c" class="step" style="display:none;">
+        <h2>Passo 4: Afluente</h2>
+        <p>O afluente leva você a uma cachoeira. Há um caminho atrás da cachoeira e uma gruta ao lado.</p>
+        <button onclick="nextStep('step5e')">Explorar Atrás da Cachoeira</button>
+        <button onclick="nextStep('step5f')">Entrar na Gruta</button>
+    </div>
+
+    <div id="step4d" class="step" style="display:none;">
+        <h2>Passo 4: Curso Principal</h2>
+        <p>Seguindo o curso principal, você encontra uma pequena vila. Os habitantes oferecem duas opções: uma pista antiga ou uma nova pista.</p>
+        <button onclick="nextStep('step5g')">Seguir a Pista Antiga</button>
+        <button onclick="nextStep('step5h')">Seguir a Nova Pista</button>
+    </div>
+
+    <div id="step5a" class="step" style="display:none;">
+        <h2>Passo 5: Templo</h2>
+        <p>Dentro do templo, você encontra uma sala com três portas: uma dourada, uma de prata e uma de bronze.</p>
+        <button onclick="nextStep('step6a')">Abrir a Porta Dourada</button>
+        <button onclick="nextStep('step6b')">Abrir a Porta de Prata</button>
+        <button onclick="nextStep('step6c')">Abrir a Porta de Bronze</button>
+    </div>
+
+    <div id="step5b" class="step" style="display:none;">
+        <h2>Passo 5: Esconderijo</h2>
+        <p>No esconderijo, você encontra uma caixa trancada com um enigma. Resolver o enigma revela uma pista para o próximo passo.</p>
+        <button onclick="nextStep('step6d')">Resolver o Enigma</button>
+    </div>
+
+    <div id="step5c" class="step" style="display:none;">
+        <h2>Passo 5: Conserto da Ponte</h2>
+        <p>Consertando a ponte, você consegue atravessar e encontra uma caverna com uma pista que leva a um vale.</p>
+        <button onclick="nextStep('step6e')">Ir para o Vale</button>
+    </div>
+
+    <div id="step5d" class="step" style="display:none;">
+        <h2>Passo 5: Rota Alternativa</h2>
+        <p>Você encontra uma trilha oculta que leva a uma aldeia abandonada com uma pista para o tesouro.</p>
+        <button onclick="nextStep('step6f')">Explorar a Aldeia</button>
+    </div>
+
+    <div id="step5e" class="step" style="display:none;">
+        <h2>Passo 5: Atrás da Cachoeira</h2>
+        <p>Você encontra uma passagem secreta atrás da cachoeira que leva a um antigo salão.</p>
+        <button onclick="nextStep('step6g')">Entrar no Salão</button>
+    </div>
+
+    <div id="step5f" class="step" style="display:none;">
+        <h2>Passo 5: Gruta</h2>
+        <p>A gruta tem uma entrada secreta com uma armadilha. Você precisa desativar a armadilha para avançar.</p>
+        <button onclick="nextStep('step6h')">Desativar a Armadilha</button>
+    </div>
+
+    <div id="step5g" class="step" style="display:none;">
+        <h2>Passo 5: Pista Antiga</h2>
+        <p>A pista antiga leva a uma antiga fortaleza. Dentro, você encontra um mapa com uma nova localização para o tesouro.</p>
+        <button onclick="nextStep('step6i')">Seguir o Novo Mapa</button>
+    </div>
+
+    <div id="step5h" class="step" style="display:none;">
+        <h2>Passo 5: Nova Pista</h2>
+        <p>A nova pista leva a um labirinto. Você precisa encontrar a saída para avançar.</p>
+        <button onclick="nextStep('step6j')">Explorar o Labirinto</button>
+    </div>
+
+    <div id="step6a" class="step" style="display:none;">
+        <h2>Passo 6: Porta Dourada</h2>
+        <p>A porta dourada leva a uma sala cheia de tesouros, mas o verdadeiro tesouro está escondido atrás de uma parede falsa.</p>
+        <button onclick="nextStep('step7')">Encontrar o Tesouro</button>
+    </div>
+
+    <div id="step6b" class="step" style="display:none;">
+        <h2>Passo 6: Porta de Prata</h2>
+        <p>A porta de prata leva a uma sala com um enigma que, se resolvido, revela o caminho para o tesouro.</p>
+        <button onclick="nextStep('step7')">Resolver o Enigma</button>
+    </div>
+
+    <div id="step6c" class="step" style="display:none;">
+        <h2>Passo 6: Porta de Bronze</h2>
+        <p>A porta de bronze leva a uma sala com um mapa que indica a localização do tesouro.</p>
+        <button onclick="nextStep('step7')">Seguir o Mapa</button>
+    </div>
+
+    <div id="step6d" class="step" style="display:none;">
+        <h2>Passo 6: Resolver o Enigma</h2>
+        <p>O enigma revela uma pista final para o tesouro.</p>
+        <button onclick="nextStep('step7')">Seguir a Pista Final</button>
+    </div>
+
+    <div id="step6e" class="step" style="display:none;">
+        <h2>Passo 6: Vale</h2>
+        <p>No vale, você encontra uma caverna com um enigma que revela a localização do tesouro.</p>
+        <button onclick="nextStep('step7')">Resolver o Enigma da Caverna</button>
+    </div>
+
+    <div id="step6f" class="step" style="display:none;">
+        <h2>Passo 6: Aldeia Abandonada</h2>
+        <p>A aldeia abandonada tem um baú com um mapa final para o tesouro.</p>
+        <button onclick="nextStep('step7')">Seguir o Mapa Final</button>
+    </div>
+
+    <div id="step6g" class="step" style="display:none;">
+        <h2>Passo 6: Salão</h2>
+        <p>No salão, você encontra um velho diário com a localização exata do tesouro.</p>
+        <button onclick="nextStep('step7')">Seguir as Instruções do Diário</button>
+    </div>
+
+    <div id="step6h" class="step" style="display:none;">
+        <h2>Passo 6: Desativar Armadilha</h2>
+        <p>Desativando a armadilha, você encontra uma passagem secreta para o tesouro.</p>
+        <button onclick="nextStep('step7')">Encontrar o Tesouro</button>
+    </div>
+
+    <div id="step6i" class="step" style="display:none;">
+        <h2>Passo 6: Novo Mapa</h2>
+        <p>Seguindo o novo mapa, você encontra a entrada para uma antiga fortaleza onde o tesouro está escondido.</p>
+        <button onclick="nextStep('step7')">Entrar na Fortaleza</button>
+    </div>
+
+    <div id="step6j" class="step" style="display:none;">
+        <h2>Passo 6: Labirinto</h2>
+        <p>Você encontra a saída do labirinto e a localização final do tesouro.</p>
+        <button onclick="nextStep('step7')">Encontrar o Tesouro</button>
+    </div>
+
+    <div id="step7" class="step" style="display:none;">
+        <h2>Passo 7: Tesouro Encontrado!</h2>
+        <p>Parabéns! Você encontrou o tesouro perdido na Amazônia! A aventura foi um sucesso.</p>
+        <button onclick="startOver()">Jogar Novamente</button>
+    </div>
+
+    <script>
+        function nextStep(stepId) {
+            var steps = document.querySelectorAll('.step');
+            steps.forEach(function(step) {
+                step.style.display = 'none';
+            });
+            document.getElementById(stepId).style.display = 'block';
+        }
+
+        function startOver() {
+            document.getElementById('step1').style.display = 'block';
+            var steps = document.querySelectorAll('.step');
+            steps.forEach(function(step) {
+                if (step.id !== 'step1') {
+                    step.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
